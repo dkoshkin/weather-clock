@@ -1,0 +1,11 @@
+[Unit]
+Description=Daemon required to control GPIO pins via pigpio
+
+[Service]
+WorkingDirectory=/home/pi/PIGPIO
+ExecStart=/home/pi/PIGPIO/pigpiod
+ExecStop=/usr/bin/killall pigpiod
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
